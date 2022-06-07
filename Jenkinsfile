@@ -8,7 +8,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'cd {{ cookiecutter.project_slug }}'
             }
         }
         stage('Login') {
