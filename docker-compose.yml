@@ -1,0 +1,16 @@
+# docker-compose up --detach --build
+version: "3.8"
+
+services:
+  api:
+    build: "."
+    container_name: "QA-Demo"
+    image: "nchunlplab/QA-Demo"
+    restart: always
+    ports:
+      - "8787:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
