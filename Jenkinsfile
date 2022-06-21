@@ -4,13 +4,11 @@ pipeline {
     environment{
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-token')
     }
+    tools{
+        docker 'myDocker'
+    }
     stages {
-        stage('Initialize'){
-            steps{
-                def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-        }
+        
         stage('Build') {
             steps {
                 echo 'Building..'
