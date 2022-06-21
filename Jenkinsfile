@@ -4,9 +4,7 @@ pipeline {
     environment{
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-token')
     }
-    tools{
-        docker 'myDocker'
-    }
+    
     stages {
         
         stage('Build') {
