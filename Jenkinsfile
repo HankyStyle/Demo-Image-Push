@@ -15,6 +15,7 @@ pipeline {
         stage('Login') {
             steps {
                 sh '#!/bin/sh'
+                sh 'ENTRYPOINT ["sh", "durable-9d64bc00/script.sh"]'
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
