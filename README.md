@@ -8,6 +8,10 @@ ODQA
 
 ## Usage
 
+'''
+ngrok http 8080
+'''
+
 Bind github webhook in jenkins configure
 
 ## Development
