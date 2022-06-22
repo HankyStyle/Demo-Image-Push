@@ -17,6 +17,7 @@ Bind github webhook in jenkins configure
 ## Development
 
 有空更新
+trigger
 
 ## Credits
 
