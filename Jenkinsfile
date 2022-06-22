@@ -1,22 +1,13 @@
 pipeline {
     agent any
     
-    environment{
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-token')
-    }
+
     
     stages {
         
         stage('Build') {
             steps {
                 echo 'Building..'
-            }
-        }
-        stage('Login') {
-            steps {
-                sh '#!/bin/sh'
-                sh 'pwd'
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
         
@@ -26,22 +17,14 @@ pipeline {
             }
         }
         
-        stage('Push') {
-            steps {
-                sh 'docker push hankystyle/demo-jenkins:lastest'
-            }
-        }
+
         
-        
+    
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
         }
     }
-    post{
-        always{
-            sh 'docker logout'
-         }
-    }
+
 }
