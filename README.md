@@ -16,8 +16,8 @@ Bind github webhook in jenkins configure
 
 ## Development
 
-有空更新
-trigger
+
+development after test finished 
 
 ## Credits
 
